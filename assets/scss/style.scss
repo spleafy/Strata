@@ -70,7 +70,6 @@ nav.header-section__navigation {
                 align-self: flex-end;
                 display: none;
 
-
                 div {
                     width: 2px;
                     height: 100%;
@@ -120,7 +119,7 @@ nav.header-section__navigation {
                             width: 0%;
                             height: 2px;
                             background: #fff;
-                            top: 100%; 
+                            top: 100%;
                             transition: width 0.2s;
                         }
 
@@ -149,7 +148,7 @@ nav.header-section__navigation {
                         width: 0%;
                         height: 2px;
                         background: #fff;
-                        top: 100%; 
+                        top: 100%;
                         transition: width 0.2s;
                     }
 
@@ -275,18 +274,22 @@ section#header-panel {
     padding-left: 8vw;
 
     .header-section__content {
-        @include flexBox;
+        // @include flexBox;
+        display: flex;
+        flex-direction: row;
 
         .header-section__text {
             padding-top: 40px;
             width: 30%;
             min-width: 15vw;
-            min-height: 700px;
+            min-height: 620px;
+            height: 620px;
+            padding-right: 20px;
             @include mixin_animation(all);
 
             h1 {
                 font-family: "Montserrat Black";
-                font-size: 50px;
+                font-size: 46px;
                 color: var(--main-red-color);
                 text-align: left;
                 text-transform: uppercase;
@@ -304,7 +307,7 @@ section#header-panel {
 
             p {
                 font-family: "Roboto Light";
-                font-size: 16pt;
+                font-size: 14pt;
                 margin-top: 40px;
                 line-height: 1.5rem;
                 letter-spacing: -0.5px;
@@ -317,8 +320,14 @@ section#header-panel {
         }
 
         .header-section__image {
-            width: 70%;
+            // border: 1px solid red;
+            // width: 70%;
             @include flexBox;
+            flex-grow: 1;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            margin-right: 40px;
 
             img {
                 // width: 800px;
@@ -560,7 +569,7 @@ section#footer-panel {
         }
 
         .header-section__content {
-            align-items: flex-start;
+            // align-items: flex-start;
 
             .header-section__text {
                 // padding-top: 2.5%;
@@ -585,7 +594,7 @@ section#footer-panel {
             }
 
             .header-section__image {
-                align-self: flex-end;
+                // align-self: flex-end;
 
                 img {
                     width: 100% !important;
@@ -656,6 +665,7 @@ section#footer-panel {
                 width: 90%;
                 min-width: 15vw;
                 min-height: 0;
+                height: auto;
 
                 h1 {
                     min-width: 0;
@@ -663,8 +673,10 @@ section#footer-panel {
             }
 
             .header-section__image {
-                width: 100%;
-
+                width: calc(100% - 30px);
+                height: 50vh;
+                background-position: bottom center;
+                margin-right: 30px;
                 img {
                     width: 100% !important;
                     display: none;
