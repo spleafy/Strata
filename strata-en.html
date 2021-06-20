@@ -192,7 +192,12 @@
                 "flex-direction": "column",
                 "opacity": 1
             });
-            $(".mobile-menu__cross-button").fadeIn("fast");
+            $(".mobile-menu__cross-button").css({
+                "display": "flex",
+                "justify-content": "center",
+                "align-items": "center",
+                "flex-direction": "column"
+            });
         }, 1000);
     });
 
