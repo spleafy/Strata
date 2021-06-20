@@ -1,8 +1,11 @@
-@import '_include';
+@import "_include";
 
 // Navigation Section
 nav.header-section__navigation {
-    @include flexBox($_justify-content: space-between, $_align-items: flex-start);
+    @include flexBox(
+        $_justify-content: space-between,
+        $_align-items: flex-start
+    );
     position: relative;
     top: 0;
     right: 0;
@@ -11,9 +14,9 @@ nav.header-section__navigation {
     min-height: 107px;
 
     .navigation__logo {
-        
         img {
             width: 70%;
+            @include mixin_animation(all);
         }
     }
 
@@ -29,7 +32,7 @@ nav.header-section__navigation {
         div {
             height: 7.5px;
             width: 80%;
-            background: #E40E19;
+            background: #e40e19;
 
             &:nth-child(1) {
                 margin-bottom: 5px;
@@ -50,7 +53,7 @@ nav.header-section__navigation {
         height: 100vh;
         background: var(--main-red-color);
         z-index: 100;
-        
+
         .mobile-menu__content {
             display: none;
             height: 100%;
@@ -64,18 +67,18 @@ nav.header-section__navigation {
                 position: relative;
                 float: right;
                 @include flexBox;
-        
+
                 div {
                     width: 2px;
                     height: 100%;
                     position: absolute;
                     background: white;
                 }
-        
+
                 div:nth-child(1) {
                     transform: rotate(-45deg);
                 }
-        
+
                 div:nth-child(2) {
                     transform: rotate(45deg);
                 }
@@ -87,7 +90,7 @@ nav.header-section__navigation {
         @include flexBox;
 
         ul {
-            @include flexBox; 
+            @include flexBox;
         }
 
         .navigation__page-links {
@@ -103,7 +106,7 @@ nav.header-section__navigation {
 
                     &:hover {
                         cursor: pointer;
-    
+
                         &::after {
                             width: 100%;
                             transition: width 0.2s ease-in-out;
@@ -173,10 +176,12 @@ section#header-panel {
         @include flexBox;
 
         .header-section__text {
-            padding-top: 5%;
+            padding-top: 40px;
             width: 30%;
             min-width: 15vw;
-    
+            min-height: 700px;
+            @include mixin_animation(all);
+
             h1 {
                 font-family: "Montserrat Black";
                 font-size: 50px;
@@ -192,8 +197,9 @@ section#header-panel {
                 color: var(--main-red-color);
                 text-align: left;
                 text-transform: uppercase;
+                white-space: nowrap;
             }
-    
+
             p {
                 font-family: "Roboto Light";
                 font-size: 16pt;
@@ -201,19 +207,20 @@ section#header-panel {
                 line-height: 1.5rem;
                 letter-spacing: -0.5px;
             }
-            
+
             p:nth-child(4) {
                 margin-top: 20px;
                 margin-bottom: 20px;
             }
         }
-    
+
         .header-section__image {
             width: 70%;
             @include flexBox;
 
             img {
-                width: 800px;
+                // width: 800px;
+                width: 60vw;
                 display: none;
                 position: absolute;
                 bottom: 0;
@@ -234,7 +241,7 @@ section#podcast-panel {
         padding: 30px;
         margin-top: 5%;
         display: grid;
-        grid-template-columns: 0.50fr 2fr 1fr;
+        grid-template-columns: 0.5fr 2fr 1fr;
         grid-template-rows: 1fr;
 
         &:nth-child(1) {
@@ -256,12 +263,17 @@ section#podcast-panel {
             grid-column: 2/2;
             grid-row: 1/2;
             justify-self: start;
-            @include flexBox($_align-items: flex-start, $_justify-content: flex-start, $_flex-direction: column);
+            @include flexBox(
+                $_align-items: flex-start,
+                $_justify-content: flex-start,
+                $_flex-direction: column
+            );
 
-            h1, h2 {
+            h1,
+            h2 {
                 font-family: "Roboto Medium";
             }
-    
+
             h1 {
                 font-size: 24pt;
                 margin-bottom: 5px;
@@ -271,7 +283,7 @@ section#podcast-panel {
                 font-size: 16pt;
                 margin-bottom: 20px;
             }
-    
+
             p {
                 font-family: "Roboto Light";
                 font-size: 14pt;
@@ -297,7 +309,7 @@ section#podcast-panel {
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-            
+
                 div {
                     width: 0;
                     height: 0;
@@ -316,9 +328,9 @@ section#podcast-panel {
 section#portfolio-panel {
     padding: 5% 0;
     padding-left: 8vw;
-    background: #F4F4F4;
+    background: #f4f4f4;
     @include flexBox($_align-items: flex-start);
-    
+
     .portfolio-panel__heading {
         width: 50%;
 
@@ -327,6 +339,7 @@ section#portfolio-panel {
             font-family: "Roboto Light";
             font-size: 48pt;
             width: 70%;
+            padding-right: 30px;
         }
 
         p {
@@ -386,7 +399,7 @@ section#ad-panel {
 section#brands-panel {
     padding: 40px 0;
     padding-left: 8vw;
-    background: #F4F4F4;
+    background: #f4f4f4;
 
     .brands-panel__heading {
         span {
@@ -439,7 +452,7 @@ section#footer-panel {
         .header-section__navigation {
             .navigation__logo {
                 img {
-                    width: 50%!important;
+                    width: 50% !important;
                 }
             }
         }
@@ -448,7 +461,7 @@ section#footer-panel {
             align-items: flex-start;
 
             .header-section__text {
-                padding-top: 2.5%;
+                // padding-top: 2.5%;
                 min-width: 15vw;
 
                 h1 {
@@ -464,8 +477,8 @@ section#footer-panel {
                 }
 
                 div {
-                    margin-top: 20px!important;
-                    margin-bottom: 10px!important;
+                    margin-top: 20px !important;
+                    margin-bottom: 10px !important;
                 }
             }
 
@@ -473,7 +486,7 @@ section#footer-panel {
                 align-self: flex-end;
 
                 img {
-                    width: 100%!important;
+                    width: 100% !important;
                     display: none;
                     position: unset;
                 }
@@ -483,7 +496,7 @@ section#footer-panel {
 
     // Podcast Panel
     section#podcast-panel {
-        .podcast{
+        .podcast {
             grid-template-columns: 1.25fr 1.75fr;
             grid-row: 1fr 0.25fr;
 
@@ -501,11 +514,11 @@ section#footer-panel {
 
             .podcast__button {
                 margin-top: 10px;
-                justify-self: end!important;
+                justify-self: end !important;
                 align-self: end;
                 grid-column: 2/2;
             }
-        } 
+        }
     }
 
     // Footer Panel
@@ -522,11 +535,11 @@ section#footer-panel {
         nav.header-section__navigation {
             align-items: center;
             padding-top: 15px;
-    
+
             .navigation__links {
                 display: none;
             }
-    
+
             .navigation__hamburger-menu {
                 @include flexBox($_flex-direction: column);
             }
@@ -537,9 +550,10 @@ section#footer-panel {
             align-items: flex-start;
 
             .header-section__text {
-                padding-top: 2.5%;
+                // padding-top: 2.5%;
                 width: 90%;
                 min-width: 15vw;
+                min-height: 0;
 
                 h1 {
                     min-width: 0;
@@ -550,7 +564,7 @@ section#footer-panel {
                 width: 100%;
 
                 img {
-                    width: 100%!important;
+                    width: 100% !important;
                     display: none;
                     position: unset;
                 }
@@ -562,13 +576,13 @@ section#footer-panel {
         .podcast {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 0.25fr;
-    
+
             .podcast__image {
                 grid-column: 1/1;
                 grid-row: 1/1;
                 width: 100%;
             }
-    
+
             .podcast__text {
                 grid-row: 1/1;
                 grid-column: 2/2;
@@ -577,9 +591,9 @@ section#footer-panel {
                     -webkit-line-clamp: 14;
                 }
             }
-    
+
             .podcast__button {
-                justify-self: start!important;
+                justify-self: start !important;
                 grid-column: 1/1;
                 grid-row: 2/2;
             }
@@ -597,6 +611,7 @@ section#footer-panel {
 
             span {
                 font-size: 20pt;
+                padding-right: 0;
             }
 
             p {
@@ -604,7 +619,7 @@ section#footer-panel {
                 margin: 10px 0;
                 width: 80%;
             }
-        }   
+        }
 
         .portfolio-panel__text {
             margin-top: 0;
@@ -629,7 +644,7 @@ section#footer-panel {
     section#ad-panel {
         @include flexBox;
         flex-direction: column-reverse;
-    
+
         .ad-panel__text {
             width: 100%;
             text-align: center;
@@ -644,7 +659,7 @@ section#footer-panel {
                 font-size: 20pt;
             }
         }
-    
+
         .ad-panel__image {
             width: 100%;
             background: none;
@@ -671,7 +686,7 @@ section#footer-panel {
                 @include flexBox;
 
                 img {
-                    width: 50%!important;
+                    width: 50% !important;
                 }
             }
 
@@ -680,15 +695,14 @@ section#footer-panel {
                 height: 30px;
                 top: 15px;
 
-
                 div {
                     height: 5px;
                     width: 100%;
-                    
+
                     &:nth-child(1) {
                         margin-bottom: 7.5px;
                     }
-                
+
                     &:nth-child(3) {
                         margin-top: 7.5px;
                     }
@@ -739,13 +753,13 @@ section#footer-panel {
         .podcast {
             grid-template-rows: 0.5fr 1fr 0.15fr;
             grid-template-columns: 1fr;
-    
+
             .podcast__image {
                 grid-row: 1/1;
                 grid-column: 1/1;
                 width: 100%;
             }
-    
+
             .podcast__text {
                 grid-column: 1/1;
                 grid-row: 2/2;
@@ -754,12 +768,12 @@ section#footer-panel {
                 font-size: 12pt;
                 line-height: 14pt;
             }
-    
+
             .podcast__button {
                 grid-column: 1/1;
-                justify-self: end!important;
+                justify-self: end !important;
                 grid-row: 3/3;
-                
+
                 div {
                     width: 66px;
                     height: 66px;
@@ -795,7 +809,7 @@ section#footer-panel {
     }
 
     section#footer-panel {
-        span  {
+        span {
             font-size: 18pt;
         }
     }

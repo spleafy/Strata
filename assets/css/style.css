@@ -136,6 +136,8 @@ nav.header-section__navigation {
 
 nav.header-section__navigation .navigation__logo img {
   width: 70%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 nav.header-section__navigation .navigation__hamburger-menu {
@@ -151,7 +153,7 @@ nav.header-section__navigation .navigation__hamburger-menu {
 nav.header-section__navigation .navigation__hamburger-menu div {
   height: 7.5px;
   width: 80%;
-  background: #E40E19;
+  background: #e40e19;
 }
 
 nav.header-section__navigation .navigation__hamburger-menu div:nth-child(1) {
@@ -380,9 +382,12 @@ section#header-panel .header-section__content {
 }
 
 section#header-panel .header-section__content .header-section__text {
-  padding-top: 5%;
+  padding-top: 40px;
   width: 30%;
   min-width: 15vw;
+  min-height: 700px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 section#header-panel .header-section__content .header-section__text h1 {
@@ -400,6 +405,7 @@ section#header-panel .header-section__content .header-section__text h2 {
   color: var(--main-red-color);
   text-align: left;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 section#header-panel .header-section__content .header-section__text p {
@@ -433,7 +439,7 @@ section#header-panel .header-section__content .header-section__image {
 }
 
 section#header-panel .header-section__content .header-section__image img {
-  width: 800px;
+  width: 60vw;
   display: none;
   position: absolute;
   bottom: 0;
@@ -452,8 +458,8 @@ section#podcast-panel .podcast {
   margin-top: 5%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.50fr 2fr 1fr;
-      grid-template-columns: 0.50fr 2fr 1fr;
+  -ms-grid-columns: 0.5fr 2fr 1fr;
+      grid-template-columns: 0.5fr 2fr 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
 }
@@ -498,7 +504,8 @@ section#podcast-panel .podcast .podcast__text {
           flex-direction: column;
 }
 
-section#podcast-panel .podcast .podcast__text h1, section#podcast-panel .podcast .podcast__text h2 {
+section#podcast-panel .podcast .podcast__text h1,
+section#podcast-panel .podcast .podcast__text h2 {
   font-family: "Roboto Medium";
 }
 
@@ -572,7 +579,7 @@ section#podcast-panel .podcast .podcast__button div div {
 section#portfolio-panel {
   padding: 5% 0;
   padding-left: 8vw;
-  background: #F4F4F4;
+  background: #f4f4f4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -597,6 +604,7 @@ section#portfolio-panel .portfolio-panel__heading span {
   font-family: "Roboto Light";
   font-size: 48pt;
   width: 70%;
+  padding-right: 30px;
 }
 
 section#portfolio-panel .portfolio-panel__heading p {
@@ -668,7 +676,7 @@ section#ad-panel .ad-panel__image img {
 section#brands-panel {
   padding: 40px 0;
   padding-left: 8vw;
-  background: #F4F4F4;
+  background: #f4f4f4;
 }
 
 section#brands-panel .brands-panel__heading span {
@@ -746,7 +754,6 @@ section#footer-panel span:nth-child(2) {
             align-items: flex-start;
   }
   section#header-panel .header-section__content .header-section__text {
-    padding-top: 2.5%;
     min-width: 15vw;
   }
   section#header-panel .header-section__content .header-section__text h1 {
@@ -840,9 +847,9 @@ section#footer-panel span:nth-child(2) {
             align-items: flex-start;
   }
   section#header-panel .header-section__content .header-section__text {
-    padding-top: 2.5%;
     width: 90%;
     min-width: 15vw;
+    min-height: 0;
   }
   section#header-panel .header-section__content .header-section__text h1 {
     min-width: 0;
@@ -911,6 +918,7 @@ section#footer-panel span:nth-child(2) {
   }
   section#portfolio-panel .portfolio-panel__heading span {
     font-size: 20pt;
+    padding-right: 0;
   }
   section#portfolio-panel .portfolio-panel__heading p {
     font-size: 18pt;
@@ -1151,4 +1159,3 @@ section#footer-panel span:nth-child(2) {
       -ms-flex-direction: row;
           flex-direction: row;
 }
-/*# sourceMappingURL=style.css.map */
