@@ -58,29 +58,131 @@ nav.header-section__navigation {
             display: none;
             height: 100%;
             width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
 
             .mobile-menu__cross-button {
-                margin: 15px 20px;
-                width: 10%;
-                height: 10%;
+                margin: 15px 30px;
+                width: 30px;
+                height: 30px;
                 cursor: pointer;
                 position: relative;
-                float: right;
-                @include flexBox;
+                align-self: flex-end;
+                display: none;
+
 
                 div {
                     width: 2px;
                     height: 100%;
                     position: absolute;
                     background: white;
+                    transform: translateX(-50%);
                 }
 
                 div:nth-child(1) {
-                    transform: rotate(-45deg);
+                    transform: translateX(-50%) rotate(-45deg);
                 }
 
                 div:nth-child(2) {
-                    transform: rotate(45deg);
+                    transform: translateX(-50%) rotate(45deg);
+                }
+            }
+
+            .mobile-menu__text {
+                width: 100%;
+                height: 100%;
+                @include flexBox($_flex-direction: column);
+
+                .mobile-menu__language {
+                    @include flexBox($_flex-direction: column);
+
+                    span {
+                        color: #fff;
+                        font-size: 32pt;
+                        cursor: pointer;
+                        font-family: "Roboto Light";
+                        margin-bottom: 15px;
+                        position: relative;
+                        @include flexBox($_flex-direction: column);
+
+                        &.active-link::after {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 2px;
+                            background: #fff;
+                            top: 100%;
+                        }
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 0%;
+                            height: 2px;
+                            background: #fff;
+                            top: 100%; 
+                            transition: width 0.2s;
+                        }
+
+                        &:hover::after {
+                            width: 100%;
+                            transition: width 0.2s;
+                        }
+                    }
+                }
+
+                .mobile-menu__subscribe-button {
+                    text-transform: uppercase;
+                    color: #fff;
+                    font-size: 18pt;
+                    margin: 100px 0;
+                    cursor: pointer;
+
+                    span {
+                        position: relative;
+                        @include flexBox($_flex-direction: column);
+                    }
+
+                    span::after {
+                        content: "";
+                        position: absolute;
+                        width: 0%;
+                        height: 2px;
+                        background: #fff;
+                        top: 100%; 
+                        transition: width 0.2s;
+                    }
+
+                    span:hover::after {
+                        width: 100%;
+                        transition: width 0.2s;
+                    }
+                }
+
+                .mobile-menu__contact-us {
+                    @include flexBox($_flex-direction: column);
+                    margin-bottom: 70px;
+
+                    span {
+                        color: #fff;
+                        font-size: 24pt;
+                        font-family: "Roboto Light";
+                    }
+
+                    span:nth-child(2) {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+
+                .mobile-menu__social-icons {
+                    @include flexBox;
+
+                    img {
+                        width: 50px;
+                        margin: 0 10px;
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -220,7 +322,7 @@ section#header-panel {
 
             img {
                 // width: 800px;
-                width: 60vw;
+                width: 52.5vw;
                 display: none;
                 position: absolute;
                 bottom: 0;

@@ -32,6 +32,24 @@
                     <div></div>
                     <div></div>
                 </div>
+                <div class="mobile-menu__text">
+                    <div class="mobile-menu__language">
+                        <span class="language-button">бг</span>
+                        <span class="active-link">eng</span>
+                    </div>
+                    <div class="mobile-menu__subscribe-button">
+                        <span>Subscribe</span>
+                    </div>
+                    <div class="mobile-menu__contact-us">
+                        <span>contact us</span>
+                        <span>office@strata.bg</span>
+                    </div>
+                    <div class="mobile-menu__social-icons">
+                        <img src="./assets/img/icons/facebook-icon.svg" alt="">
+                        <img src="./assets/img/icons/linkedin-icon.svg" alt="">
+                        <img src="./assets/img/icons/instagram-icon.svg" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -167,7 +185,14 @@
         $(".navigaiton__mobile-menu").css("width", "100vw");
         $("body").css("overflow", "hidden");
         setTimeout(() => {
-            $(".mobile-menu__content").fadeIn("fast");
+            $(".mobile-menu__content").css({
+                "display": "flex",
+                "justify-content": "center",
+                "align-items": "center",
+                "flex-direction": "column",
+                "opacity": 1
+            });
+            $(".mobile-menu__cross-button").fadeIn("fast");
         }, 1000);
     });
 
