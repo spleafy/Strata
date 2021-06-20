@@ -187,8 +187,8 @@ nav.header-section__navigation .navigaiton__mobile-menu .mobile-menu__content {
 
 nav.header-section__navigation .navigaiton__mobile-menu .mobile-menu__content .mobile-menu__cross-button {
   margin: 15px 30px;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
   position: relative;
   -ms-flex-item-align: end;
