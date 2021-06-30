@@ -118,7 +118,6 @@ foreach(glob($channelDirectory.'/*.*') as $channelFile) {
     $channelPictureFileNameExploded = explode("/", $channelFile);
     $channelPictureFileName = $channelPictureFileNameExploded[sizeof($channelPictureFileNameExploded) - 1];
     $channelPictureUrl = $protocol."://".$host."/assets/podcasts/channel/".$channelPictureFileName;
-    echo $channelPictureUrl;
   }
 }
 
