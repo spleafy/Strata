@@ -189,8 +189,31 @@ nav.header-section__navigation .navigaiton__mobile-menu .mobile-menu__content .m
   position: absolute;
   top: 0;
   right: 0;
-  padding-left: 20px;
-  margin-right: 10px;
+  margin-right: 30px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav.header-section__navigation .navigaiton__mobile-menu .mobile-menu__content .mobile-menu__cross-button:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
 nav.header-section__navigation .navigaiton__mobile-menu .mobile-menu__content .mobile-menu__cross-button div {
@@ -494,6 +517,8 @@ nav.header-section__navigation .navigation__links .navigation__page-links div {
   font-size: 10pt;
   text-transform: uppercase;
   margin-bottom: 50px;
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -507,6 +532,12 @@ nav.header-section__navigation .navigation__links .navigation__page-links div {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+nav.header-section__navigation .navigation__links .navigation__page-links div:hover {
+  background: #c71217;
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
 }
 
 nav.header-section__navigation .navigation__links .navigation__social-links {
@@ -718,6 +749,7 @@ section#podcast-panel .podcast .podcast__button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  --playing-flag: 0;
 }
 
 section#podcast-panel .podcast .podcast__button > div {
@@ -740,9 +772,17 @@ section#podcast-panel .podcast .podcast__button > div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
 }
 
-section#podcast-panel .podcast .podcast__button > div > div {
+section#podcast-panel .podcast .podcast__button > div:hover {
+  background: #c71217;
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+
+section#podcast-panel .podcast .podcast__button > div .audio-play-button {
   width: 0;
   height: 0;
   border-radius: 0;
@@ -752,9 +792,99 @@ section#podcast-panel .podcast .podcast__button > div > div {
   background: transparent;
 }
 
-section#podcast-panel .podcast .podcast__button > div:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+section#podcast-panel .podcast .podcast__button > div .audio-animation {
+  display: none;
+  height: 40px;
+}
+
+section#podcast-panel .podcast .podcast__button > div .audio-animation div {
+  width: 5px;
+  background: white;
+  margin: 0 2.5px;
+}
+
+section#podcast-panel .podcast .podcast__button > div .audio-animation div:nth-child(1) {
+  -webkit-animation: heighChange1 ease 0.4s alternate infinite;
+          animation: heighChange1 ease 0.4s alternate infinite;
+  height: 10%;
+}
+
+section#podcast-panel .podcast .podcast__button > div .audio-animation div:nth-child(2) {
+  -webkit-animation: heighChange2 ease 0.4s alternate infinite 0.2s;
+          animation: heighChange2 ease 0.4s alternate infinite 0.2s;
+  height: 20%;
+}
+
+section#podcast-panel .podcast .podcast__button > div .audio-animation div:nth-child(3) {
+  -webkit-animation: heighChange3 ease 0.4s alternate infinite 0.1s;
+          animation: heighChange3 ease 0.4s alternate infinite 0.1s;
+  height: 15%;
+}
+
+@-webkit-keyframes heighChange1 {
+  from {
+    height: 10%;
+  }
+  to {
+    height: 90%;
+  }
+}
+
+@keyframes heighChange1 {
+  from {
+    height: 10%;
+  }
+  to {
+    height: 90%;
+  }
+}
+
+@-webkit-keyframes heighChange2 {
+  from {
+    height: 20%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes heighChange2 {
+  from {
+    height: 20%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes heighChange3 {
+  from {
+    height: 15%;
+  }
+  to {
+    height: 75%;
+  }
+}
+
+@keyframes heighChange3 {
+  from {
+    height: 15%;
+  }
+  to {
+    height: 75%;
+  }
+}
+
+section#podcast-panel .podcast .podcast__button > div .audio-pause-button {
+  height: 40px;
+  display: none;
+}
+
+section#podcast-panel .podcast .podcast__button > div .audio-pause-button div {
+  width: 7.5px;
+  height: 90%;
+  margin: 0 5px;
+  background: #fff;
 }
 
 section#portfolio-panel {
@@ -1148,6 +1278,7 @@ section#footer-panel span:nth-child(2) {
     width: 80%;
     margin: 20px 0;
     font-size: 20pt;
+    padding-right: 0;
   }
   section#ad-panel .ad-panel__image {
     width: 100%;
