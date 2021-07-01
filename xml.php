@@ -115,6 +115,11 @@ foreach($file_array as $mp3) {
 foreach(glob($channelDirectory.'/*.*') as $channelFile) {
   $channelFileExploded = explode(".", $channelFile);
   if ($channelFileExploded[2] == "png" || $channelFileExploded[2] == "jpg" || $channelFileExploded[2] == "jpeg") {
+    $channelPictureInsideUrl = ".".$channelFileExploded[1].".".$channelFileExploded[2];
+    $channelPictureSize = getimagesize($channelPictureInsideUrl);
+    $channelPictureWidth = $channelPictureSize[0];
+    $channelPictureHeight = $channelPictureSize[1];
+
     $channelPictureFileNameExploded = explode("/", $channelFile);
     $channelPictureFileName = $channelPictureFileNameExploded[sizeof($channelPictureFileNameExploded) - 1];
     $channelPictureUrl = $protocol."://".$host."/assets/podcasts/channel/".$channelPictureFileName;
@@ -134,6 +139,8 @@ $podcastXmlHtml = getTemplateReplace($podcastXmlFile, array(
   "{URL_GLOBAL}" => $channelUrl,
   "{DESCRIPTION}" => $channelDescription,
   "{IMG_URL}" => $channelPictureUrl,
+  "{IMG_WIDTH}" => $channelPictureWidth,
+  "{IMG_HEIGHT}" => $channelPictureHeight,
   "{ITEMS}" => $podcastItemHtml
 ));
 
