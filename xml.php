@@ -94,19 +94,22 @@ foreach($file_array as $mp3) {
 
   $podcastXmlItemFile = file_get_contents("item.html");
 
-  $podcastDate = date("F d Y H:i:s.", filemtime($mp3_name));
+  $podcastDate = date('Y-m-d H:i:s T', filemtime($mp3_name));
 
   $mp3FileNameExploded = explode("/", $mp3_name);
 
   $mp3FileName = $mp3FileNameExploded[sizeof($mp3FileNameExploded) - 1];
 
   $link = $protocol."://".$host.$podcastFileDir.$mp3FileName;
+  
+  $podcastFileSize = filesize($mp3);
 
   $podcastHTMLItem = getTemplateReplace($podcastXmlItemFile, array(
     "{TITLE}" => $person,
     "{PUBLISHDATE}" => $podcastDate,
     "{URL_PODCAST}" => $link,
-    "{PODCAST_DESCRIPTION}" => $description
+    "{PODCAST_DESCRIPTION}" => $description,
+    "{PODCAST_LENGTH}" => $podcastFileSize
   ));
 
   $podcastItemHtml .= $podcastHTMLItem;
@@ -139,8 +142,6 @@ $podcastXmlHtml = getTemplateReplace($podcastXmlFile, array(
   "{URL_GLOBAL}" => $channelUrl,
   "{DESCRIPTION}" => $channelDescription,
   "{IMG_URL}" => $channelPictureUrl,
-  "{IMG_WIDTH}" => $channelPictureWidth,
-  "{IMG_HEIGHT}" => $channelPictureHeight,
   "{ITEMS}" => $podcastItemHtml
 ));
 

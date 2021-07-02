@@ -2,13 +2,15 @@
 <rss version="2.0">
   <channel>
     <title>{TITLE}</title>
-    <link>{URL_GLOBAL}</link>
+    <link rel="self">{URL_GLOBAL}</link>
     <description>{DESCRIPTION}</description>
     <language>eu-bg</language>
     <image>
+      <title>{TITLE}</title>
+      <link>{URL_GLOBAL}</link>
       <url>{IMG_URL}</url>
-      <width>{IMG_WIDTH}</width>
-      <height>{IMG_HEIGHT}</height>
+      <width>144</width>
+      <height>144</height>
     </image>
     {ITEMS}
   </channel>
