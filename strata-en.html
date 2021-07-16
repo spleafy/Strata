@@ -216,24 +216,13 @@
 
   $("#header-image").css("background-image", "url(" + headerImageUrl + ")");
 
+  $("#header-image").css("background-image", "url(" + headerImageUrl + ")");
+
   $(".navigation__hamburger-menu").on("click", () => {
-    $(".navigaiton__mobile-menu").css("left", "0");
-    // $("body").css("overflow", "hidden");
-    // setTimeout(() => {
-    //     $(".mobile-menu__content").css({
-    //         display: "flex",
-    //         "justify-content": "center",
-    //         "align-items": "center",
-    //         "flex-direction": "column",
-    //         opacity: 1,
-    //     });
-    //     $(".mobile-menu__cross-button").css({
-    //         display: "flex",
-    //         "justify-content": "center",
-    //         "align-items": "center",
-    //         "flex-direction": "column",
-    //     });
-    // }, 1000);
+    $(".navigaiton__mobile-menu").css(
+      "animation",
+      "openNavigation 0.3s ease-in-out forwards"
+    );
   });
 
   $(".podcast-circle-button").on("click", function () {
@@ -281,11 +270,7 @@
   });
 
   $(".mobile-menu__cross-button").on("click", () => {
-    // $(".mobile-menu__content").fadeOut("fast");
-    $(".navigaiton__mobile-menu").css("left", "100vw");
-    setTimeout(() => {
-      $("body").css("overflow", "unset");
-    }, 1000);
+    $(".navigaiton__mobile-menu").css("animation", "unset");
   });
 
   $(".about-us-button").on("click", () => {
