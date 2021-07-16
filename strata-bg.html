@@ -13,17 +13,31 @@
           <span class="active-link">бг</span>
           <span class="language-button">eng</span>
         </li>
-        <div class="podcast-subscribe-button">Абонирай се за подкаста</div>
+        <div class="podcast-subscribe-button">
+          <a
+            href="https://vijkoigovorisega.transistor.fm/subscribe"
+            target="_blank"
+            >Абонирай се за подкаста</a
+          >
+        </div>
       </ul>
       <ul class="navigation__social-links">
         <li>
-          <a href="https://www.facebook.com/StrataPromo/" target="_blank"><img src="./assets/img/icons/facebook-icon.svg" alt="" /></a>
+          <a href="https://www.facebook.com/StrataPromo/" target="_blank"
+            ><img src="./assets/img/icons/facebook-icon.svg" alt=""
+          /></a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/company/strata-promo/about/" target="_blank"><img src="./assets/img/icons/linkedin-icon.svg" alt="" /></a>
+          <a
+            href="https://www.linkedin.com/company/strata-promo/about/"
+            target="_blank"
+            ><img src="./assets/img/icons/linkedin-icon.svg" alt=""
+          /></a>
         </li>
         <li>
-          <a href="https://www.instagram.com/stratapromo/" target="_blank"><img src="./assets/img/icons/instagram-icon.svg" alt="" /></a>
+          <a href="https://www.instagram.com/stratapromo/" target="_blank"
+            ><img src="./assets/img/icons/instagram-icon.svg" alt=""
+          /></a>
         </li>
       </ul>
     </div>
@@ -44,16 +58,30 @@
             <span class="language-button">eng</span>
           </div>
           <div class="mobile-menu__subscribe-button">
-            <span>Абонирай се за подкаста</span>
+            <span
+              ><a
+                href="https://vijkoigovorisega.transistor.fm/subscribe"
+                target="_blank"
+                >Абонирай се за подкаста</a
+              ></span
+            >
           </div>
           <div class="mobile-menu__contact-us">
             <span>Свържете се с нас</span>
             <span>office@strata.bg</span>
           </div>
           <div class="mobile-menu__social-icons">
-            <a href="https://www.facebook.com/StrataPromo/" target="_blank"><img src="./assets/img/icons/facebook-icon.svg" alt="" /></a>
-            <a href="https://www.linkedin.com/company/strata-promo/about/" target="_blank"><img src="./assets/img/icons/linkedin-icon.svg" alt="" /></a>
-            <a href="https://www.instagram.com/stratapromo/" target="_blank"><img src="./assets/img/icons/instagram-icon.svg" alt="" /></a>
+            <a href="https://www.facebook.com/StrataPromo/" target="_blank"
+              ><img src="./assets/img/icons/facebook-icon.svg" alt=""
+            /></a>
+            <a
+              href="https://www.linkedin.com/company/strata-promo/about/"
+              target="_blank"
+              ><img src="./assets/img/icons/linkedin-icon.svg" alt=""
+            /></a>
+            <a href="https://www.instagram.com/stratapromo/" target="_blank"
+              ><img src="./assets/img/icons/instagram-icon.svg" alt=""
+            /></a>
           </div>
         </div>
       </div>
@@ -176,7 +204,6 @@
 
 <!-- Page Script -->
 <script>
-  
   // Header Section Images Fucntionality
   headerIndex = Math.floor(Math.random() * 4) + 0;
   //console.log("headerIndex=" + headerIndex);
@@ -186,23 +213,10 @@
   $("#header-image").css("background-image", "url(" + headerImageUrl + ")");
 
   $(".navigation__hamburger-menu").on("click", () => {
-    $(".navigaiton__mobile-menu").css("left", "0");
-    // $("body").css("overflow", "hidden");
-    // setTimeout(() => {
-    //     $(".mobile-menu__content").css({
-    //         display: "flex",
-    //         "justify-content": "center",
-    //         "align-items": "center",
-    //         "flex-direction": "column",
-    //         opacity: 1,
-    //     });
-    //     $(".mobile-menu__cross-button").css({
-    //         display: "flex",
-    //         "justify-content": "center",
-    //         "align-items": "center",
-    //         "flex-direction": "column",
-    //     });
-    // }, 1000);
+    $(".navigaiton__mobile-menu").css(
+      "animation",
+      "openNavigation 0.3s ease-in-out forwards"
+    );
   });
 
   $(".podcast-circle-button").on("click", function () {
@@ -250,11 +264,7 @@
   });
 
   $(".mobile-menu__cross-button").on("click", () => {
-    // $(".mobile-menu__content").fadeOut("fast");
-    $(".navigaiton__mobile-menu").css("left", "100vw");
-    setTimeout(() => {
-      $("body").css("overflow", "unset");
-    }, 1000);
+    $(".navigaiton__mobile-menu").css("animation", "unset");
   });
 
   $(".about-us-button").on("click", () => {

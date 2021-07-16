@@ -5,10 +5,28 @@
 
         $languageBg = file_get_contents("strata-bg.html");
 
-        $log_directory = "./assets/podcasts";
+        // Variable For The Show Id *Change It If The Show Id Is Changed*
+        $showId = 22506; 
+        // Variable For The Api Key *Change It If The Key Is Changed*
+        $APIKey = "JR3JgX9ri_Gy5p0WC8sTwg";
 
-        $file_array = array();
+        $requestURL = "https://api.transistor.fm/v1/episodes?show_id=".$showId."&status=published&pagination[per]=100";
+        $httpArray = array(
+        'http' =>
+            array(
+                'method'  => 'GET',
+                'header'  => array(
+                    "x-api-key: $APIKey",
+                    'Content-type: application/json'
+                ),
+            )
+        );
+        $context = stream_context_create($httpArray);
+       
+        $data = file_get_contents($requestURL, false, $context);
 
+        $podcastObj = json_decode($data);
+        
         $podcast_box_file = file_get_contents("podcast-box.html");
 
         $podcast_html = "";
@@ -23,52 +41,26 @@
     
         }
 
-        foreach(glob($log_directory.'/*.*') as $file) {
-            $file_exploded =  explode(".", $file);
-            if ($file_exploded[2] == "mp3") {
-                $file_array[] = $file;
-            }
-        }
+        foreach($podcastObj->data as $podcast) {
 
-        foreach($file_array as $mp3) {
-            $mp3_array = explode(".", $mp3);
-
-            $mp3_name = ".".$mp3_array[1].".mp3";
-            if (!file_exists($mp3_name)) {
-                $mp3_name = "./assets/default/default.mp3";
+            if ($podcast->attributes->image_url == null) {
+                $podcastImage = "./assets/default/default.png";
+            } else {
+                $podcastImage = $podcast->attributes->image_url;
             }
 
-            $txt_name = ".".$mp3_array[1].".txt";
-            if (!file_exists($txt_name)) {
-                $txt_name = "./assets/default/default.txt";
+            if ($podcast->attributes->summary == "") {
+                $podcastSummary = file_get_contents("./assets/default/default.txt");
+            } else {
+                $podcastSummary = $podcast->attributes->summary;
             }
-
-            $img_name = ".".$mp3_array[1].".png";
-            if (!file_exists($img_name)) {
-                $img_name = "./assets/default/default.png";
-            }
-
-            $text_file = fopen($txt_name, "r");
-
-            $person = fgets($text_file);
-
-            $position = fgets($text_file);
-
-            fclose($text_file);
-
-            $description_file = file_get_contents($txt_name);
-
-            $description = getTemplateReplace($description_file, array(
-                $person => "",
-                $position => ""
-            )); 
 
             $podcast_box_html = getTemplateReplace($podcast_box_file, array(
-                "{IMAGE}" => $img_name,
-                "{PERSON}" => $person,
-                "{POSITION}" => $position,
-                "{DESCRIPTION}" => $description,
-                "{AUDIO_FILE}" => $mp3_name
+                "{IMAGE}" => $podcastImage,
+                "{TITLE}" => $podcast->attributes->title,
+                "{EPISODE}" => $podcast->attributes->number,
+                "{DESCRIPTION}" => $podcastSummary,
+                "{AUDIO_FILE}" => $podcast->attributes->media_url
             ));
             
             $podcast_html .= $podcast_box_html;
@@ -87,79 +79,6 @@
         header('Content-Type: application/json');
 
         $languageEn = file_get_contents("strata-en.html");
-
-        $log_directory = "./assets/podcasts";
-
-        $file_array = array();
-
-        $podcast_box_file = file_get_contents("podcast-box.html");
-
-        $podcast_html = "";
-
-        function getTemplateReplace($_text, $_replace_array = []) {
-
-            foreach($_replace_array as $from=>$to) {
-                $_text = str_replace($from, $to, $_text);
-            }
-    
-            return $_text;
-    
-        }
-
-        foreach(glob($log_directory.'/*.*') as $file) {
-            $file_exploded =  explode(".", $file);
-            if ($file_exploded[2] == "mp3") {
-                $file_array[] = $file;
-            }
-        }
-
-        foreach($file_array as $mp3) {
-            $mp3_array = explode(".", $mp3);
-
-            $mp3_name = ".".$mp3_array[1].".mp3";
-            if (!file_exists($mp3_name)) {
-                $mp3_name = "./assets/default/default.mp3";
-            }
-
-            $txt_name = ".".$mp3_array[1].".txt";
-            if (!file_exists($txt_name)) {
-                $txt_name = "./assets/default/default.txt";
-            }
-
-            $img_name = ".".$mp3_array[1].".png";
-            if (!file_exists($img_name)) {
-                $img_name = "./assets/default/default.png";
-            }
-
-            $text_file = fopen($txt_name, "r");
-
-            $person = fgets($text_file);
-
-            $position = fgets($text_file);
-
-            fclose($text_file);
-
-            $description_file = file_get_contents($txt_name);
-
-            $description = getTemplateReplace($description_file, array(
-                $person => "",
-                $position => ""
-            )); 
-
-            $podcast_box_html = getTemplateReplace($podcast_box_file, array(
-                "{IMAGE}" => $img_name,
-                "{PERSON}" => $person,
-                "{POSITION}" => $position,
-                "{DESCRIPTION}" => $description,
-                "{AUDIO_FILE}" => $mp3_name
-            ));
-            
-            $podcast_html .= $podcast_box_html;
-        }
-
-        $languageEn = getTemplateReplace($languageEn, array(
-            "{PODCASTS}" => $podcast_html
-        ));
 
         echo json_encode($languageEn);
 

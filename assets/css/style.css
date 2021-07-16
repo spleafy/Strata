@@ -165,8 +165,6 @@ nav.header-section__navigation .navigation__hamburger-menu div:nth-child(3) {
 }
 
 nav.header-section__navigation .navigaiton__mobile-menu {
-  -webkit-transition: left 0.3s ease-out;
-  transition: left 0.3s ease-out;
   position: fixed;
   top: 0;
   left: 100vw;
@@ -174,6 +172,30 @@ nav.header-section__navigation .navigaiton__mobile-menu {
   height: 100vh;
   background: var(--main-red-color);
   z-index: 100;
+}
+
+@-webkit-keyframes openNavigation {
+  to {
+    left: 0;
+  }
+}
+
+@keyframes openNavigation {
+  to {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes closeNavigation {
+  to {
+    left: 100vw;
+  }
+}
+
+@keyframes closeNavigation {
+  to {
+    left: 100vw;
+  }
 }
 
 nav.header-section__navigation .navigaiton__mobile-menu .mobile-menu__content {
@@ -503,7 +525,6 @@ nav.header-section__navigation .navigation__links .navigation__page-links li spa
 }
 
 nav.header-section__navigation .navigation__links .navigation__page-links div {
-  padding: 10px 5px;
   margin-top: 40px;
   width: 200px;
   min-width: 200px;
@@ -532,6 +553,10 @@ nav.header-section__navigation .navigation__links .navigation__page-links div {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+nav.header-section__navigation .navigation__links .navigation__page-links div a {
+  padding: 10px 5px;
 }
 
 nav.header-section__navigation .navigation__links .navigation__page-links div:hover {
@@ -712,12 +737,22 @@ section#podcast-panel .podcast .podcast__text h2 {
 }
 
 section#podcast-panel .podcast .podcast__text h1 {
-  font-size: 24pt;
+  font-size: 16pt;
   margin-bottom: 5px;
+  color: var(--main-red-color);
+  text-transform: uppercase;
+  font-family: "Montserrat Black";
+  margin-bottom: 10px;
 }
 
 section#podcast-panel .podcast .podcast__text h2 {
   font-size: 16pt;
+  margin-bottom: 5px;
+}
+
+section#podcast-panel .podcast .podcast__text h3 {
+  font-family: "Roboto Medium";
+  font-size: 20pt;
   margin-bottom: 20px;
 }
 
@@ -810,14 +845,14 @@ section#podcast-panel .podcast .podcast__button > div .audio-animation div:nth-c
 }
 
 section#podcast-panel .podcast .podcast__button > div .audio-animation div:nth-child(2) {
-  -webkit-animation: heighChange2 ease 0.4s alternate infinite 0.2s;
-          animation: heighChange2 ease 0.4s alternate infinite 0.2s;
+  -webkit-animation: heighChange2 ease 0.4s alternate infinite 0.2s;
+          animation: heighChange2 ease 0.4s alternate infinite 0.2s;
   height: 20%;
 }
 
 section#podcast-panel .podcast .podcast__button > div .audio-animation div:nth-child(3) {
-  -webkit-animation: heighChange3 ease 0.4s alternate infinite 0.1s;
-          animation: heighChange3 ease 0.4s alternate infinite 0.1s;
+  -webkit-animation: heighChange3 ease 0.4s alternate infinite 0.1s;
+          animation: heighChange3 ease 0.4s alternate infinite 0.1s;
   height: 15%;
 }
 
@@ -1057,7 +1092,7 @@ section#footer-panel span:nth-child(2) {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1320px) {
+@media only screen and (max-width: 1280px) {
   section#header-panel .header-section__navigation .navigation__logo img {
     width: 50% !important;
   }
@@ -1090,7 +1125,7 @@ section#footer-panel span:nth-child(2) {
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1150px) {
   section#header-panel nav.header-section__navigation {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -1469,3 +1504,4 @@ section#footer-panel span:nth-child(2) {
       -ms-flex-direction: row;
           flex-direction: row;
 }
+/*# sourceMappingURL=style.css.map */
