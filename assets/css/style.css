@@ -8,6 +8,26 @@ body {
 }
 
 @font-face {
+  font-family: "Montserrat Regular";
+  src: url(../fonts/montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat Light";
+  src: url(../fonts/montserrat/Montserrat-Light.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat Medium";
+  src: url(../fonts/montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat Bold";
+  src: url(../fonts/montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
   font-family: "Roboto Regular";
   src: url(../fonts/roboto/Roboto-Regular.ttf);
 }
@@ -605,7 +625,7 @@ section#header-panel .header-section__content .header-section__text {
   width: 30%;
   min-width: 15vw;
   min-height: 620px;
-  height: 620px;
+  margin-bottom: 50px;
   padding-right: 20px;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -676,7 +696,28 @@ section#header-panel .header-section__content .header-section__image img {
 
 section#podcast-panel {
   padding: 6vw 8vw;
-  background: var(--main-red-color);
+  background: lightgray;
+}
+
+section#podcast-panel h1 {
+  font-family: "Montserrat Bold";
+  font-size: 36px;
+  text-align: left;
+}
+
+section#podcast-panel h2 {
+  font-family: "Montserrat Medium";
+  font-size: 24px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+section#podcast-panel p {
+  font-family: "Roboto Light";
+  font-size: 14pt;
+  margin: 40px 0;
+  line-height: 1.5rem;
+  letter-spacing: -0.5px;
 }
 
 section#podcast-panel .podcast {

@@ -1,0 +1,47 @@
+{
+  "bg": {
+    "header": {
+      "about_link": "За нас",
+      "heading": "Нашата мисия е да превръщаме историите в продажби.",
+      "sub_heading": "Страта е агенция за <br />  пълно маркетингово обслужване - 24/7/365",
+      "paragraph": "Какво прави продуктите марки? Кое всъщност е различното между тях? На рафта най-често избираме между историите, разказани за тези продукти. Избираме между послания, които превръщат продуктите в марки. Гласуваме за истории, разказани от хора. <br /> <br /> Ние в Страта сме избрали да работим за хората, които създават марки. Помагаме им когато разказват. Истински истории за продукти. Разказани една по една, канал по канал. Така помагаме на клиентите си да продават повече.",
+      "action": "Абонирай се за подкаста",
+      "language": {
+        "first": "active-link",
+        "second": "language-button"
+      }
+    },
+    "podcast": {
+      "heading":"Виж кой говори сега",
+      "sub_heading": "Страта, 20 години по-късно",
+      "paragraph": "Имаме юбилей. И вместо да поканим гости, ние ще идем при тях. Ще посетим хората, които седят зад целия този смях, сълзи и шум през последните десетилетия на рекламни блокове, паузи, саниране, ескалиране и семплинги. <br /> <br /> Ще празнуваме в подкаст, където да представим различни герои от бранша - от маркетинговите отдели, от рекламните агенции, от медии, производство, дистрибуция… всички заподозрени за това, което наричат маркетинг в България. Кратки интервюта от по 20 въпроса - фокусът е върху личността, човешкото преживяване, промените в глобален мащаб и по някой и друг въпрос за времето."
+    },
+    "brands": {
+      "heading": "Марките, за които работим"
+    },
+    "contact": {
+      "heading": "Свържете се с нас",
+      "mail": "office@strata.com"
+    }
+  },
+  "en": {
+    "header": {
+      "about_link": "About us",
+      "heading": "We are here to make your relevance actionable.",
+      "sub_heading": "Connecting digital with sales",
+      "paragraph": "We assist International FMCG companies understand what is relevant for them when buying marketing services locally. We know how to tell a global story in the language of local people. We are providing affordable but complex solutions to small businesses and startups. We know that you don’t need to be big to disrupt the market. People don’t buy products – they buy stories. Relevant stories told by people. <br /> <br /> People who tell stories about products create brands. And we seek to serve these people – those who serve brands. We know how to help them sell more. We are here to make their story actionable. <br /> <br /> Strata is here to curate all you need to spread your story and make it sound relevant to your tribe.<br /> One by one. Chanel by chanel.<br /> Personal talk.",
+      "action": "Subscribe",
+      "language": {
+        "first": "language-button",
+        "second": "active-link"
+      }
+    },
+    "brands": {
+      "heading": "Brands we work for"
+    },
+    "contact": {
+      "heading": "Contact us",
+      "mail": "office@strata.com"
+    }
+  }
+}

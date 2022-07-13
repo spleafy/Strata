@@ -317,7 +317,8 @@ section#header-panel {
       width: 30%;
       min-width: 15vw;
       min-height: 620px;
-      height: 620px;
+      // height: 620px;
+      margin-bottom: 50px;
       padding-right: 20px;
       @include mixin_animation(all);
 
@@ -379,7 +380,29 @@ section#header-panel {
 // Podcast Section
 section#podcast-panel {
   padding: 6vw 8vw;
-  background: var(--main-red-color);
+  // background: var(--main-red-color);
+  background: lightgray;
+
+  h1 {
+    font-family: "Montserrat Bold";
+    font-size: 36px;
+    text-align: left;
+  }
+
+  h2 {
+    font-family: "Montserrat Medium";
+    font-size: 24px;
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  p {
+    font-family: "Roboto Light";
+    font-size: 14pt;
+    margin: 40px 0;
+    line-height: 1.5rem;
+    letter-spacing: -0.5px;
+  }
 
   .podcast {
     background: white;

@@ -10,5 +10,6 @@ $("document").ready(() => {
     "./assets/img/header-image-3.png",
     "./assets/img/header-image-4.png",
   ];
+  
   let headerIndex = null, headerImageUrl = null;
   
